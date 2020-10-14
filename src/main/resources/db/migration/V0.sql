@@ -2,7 +2,7 @@ create sequence hibernate_sequence start with 1 increment by 1;
 create table animal_category (name varchar(255) not null, primary key (name));
 create table order_table (id bigint not null, value bigint, order_item_id bigint, primary key (id));
 create table order_item (id bigint not null, count integer, value bigint, product_id bigint not null, primary key (id));
-create table product (id bigint not null, description varchar(255), gallery varchar(255), name varchar(255), value bigint, primary key (id));
+create table product (id bigint not null, description clob, gallery clob, name varchar(1000), value bigint, primary key (id));
 create table product_animal_categories (product_id bigint not null, animal_categories_name varchar(255) not null);
 alter table order_item add constraint UK_qd4o375qvtt45ierlsgsouhlc unique (product_id);
 alter table product_animal_categories add constraint UK_1w944yij6n4aqdqpaq66brbpy unique (animal_categories_name);

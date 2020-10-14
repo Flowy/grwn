@@ -1,10 +1,13 @@
 package com.flowyk.grwn;
 
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+import javax.persistence.EntityManagerFactory;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -14,17 +17,5 @@ public class GrwnApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(GrwnApplication.class, args);
-	}
-
-	@Value("${jdbc.url}")
-	String jdbcUrl;
-
-	private Connection connection;
-	@Bean
-	public Connection dbConnection() throws SQLException {
-		if (connection == null) {
-			connection = DriverManager.getConnection(jdbcUrl);
-		}
-		return connection;
 	}
 }

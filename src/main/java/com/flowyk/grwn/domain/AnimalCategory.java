@@ -1,4 +1,4 @@
-package com.flowyk.grwn;
+package com.flowyk.grwn.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
