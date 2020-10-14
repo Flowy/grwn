@@ -17,4 +17,11 @@ public class Product {
     Price price;
     String description;
     String gallery;
+
+
+    public Product(String name, Price price, String description) {
+        this.name = name;
+        this.price = price;
+        this.description = description;
+    }
 }
